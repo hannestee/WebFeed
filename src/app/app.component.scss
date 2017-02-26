@@ -1,0 +1,48 @@
+@import '../../node_modules/bootstrap/scss/bootstrap';
+$darkestblue: #16193B;
+$darkerblue: #35478C;
+$blue: #4E7AC7;
+$lightblue2: #7FB2F0;
+$lightblue: #ADD5F7;
+
+$navbarborder: $darkestblue;
+$navbarbg: $darkerblue;
+$sitebg: $blue;
+
+
+.navbar {
+  background-color: $navbarbg;
+  border-color: $navbarborder;
+}
+
+app-top-bar{
+  height: 5em;
+}
+
+.container{
+  margin-left: 40em;
+  width: 50%;
+  height: 120em;
+  background-color: $sitebg;
+  h1{
+    margin-top: 2em;
+  }
+  #feed{
+    margin-top: 5em;
+    .col-xs-6{
+      margin-bottom: 2em;
+      #signOut{
+        margin-left: 40em;
+      }
+    }
+  }
+}
+
+
+#footer {
+  margin-bottom: -20px;
+  height: 5em;
+  background-color: $navbarbg;
+  border-color: $navbarborder;
+}
+

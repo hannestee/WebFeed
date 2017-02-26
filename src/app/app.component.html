@@ -1,3 +1,36 @@
-<h1>
-  {{title}}
-</h1>
+<nav class="navbar fixed-top navbar-light"></nav>
+<body style="background-color: #7FB2F0">
+<div class="container">
+  <h1>InternetFeed</h1>
+  <div class="row" id="feed">
+    <div class="col-xs-6">
+      <button ng-click="connectButton()" id="connectButton" type="button" class="btn btn-primary">Connect Twitter</button>
+      <button ng-click="refreshTimeline()" id="getTimelineButton" type="button" class="btn btn-primary" style="display:none;">Feed me</button>
+      <button ng-click="signOut()" id="signOut" type="button" class="btn btn-danger" style="display:none;">Sign Out</button>
+    </div>
+    <!--
+      <div class="col-xs-6">
+          <input type="text" ng-model="searchTerm" class="form-control" id="searchBox" placeholder="Enter search term here" ng-show="connectedTwitter"/>
+      </div>
+          -->
+
+
+    <a data-width="300" data-height="300"
+       class="twitter-timeline" href="https://twitter.com/steam_games">Tweets by steam_games
+    </a>
+
+  </div>
+
+  <!--<div ng-controller="VideosController"></div>
+  <button ng-click="launch()" id="launch" type="button" class="btn btn-primary">Launch</button>
+  <div id="player">
+    <div id="placeholder" width="640" height="390">
+
+    </div>
+  </div>
+  -->
+</div>
+<footer class="navbar fixed-bottom navbar-light" id="footer">
+  <a class="navbar-brand" href="#">Fixed bottom</a>
+</footer>
+</body>
