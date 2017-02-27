@@ -38,11 +38,14 @@ app-top-bar{
   }
 }
 
-
 #footer {
   margin-bottom: -20px;
   height: 5em;
   background-color: $navbarbg;
   border-color: $navbarborder;
+}
+
+.app-video{
+  margin: 12em;
 }
 

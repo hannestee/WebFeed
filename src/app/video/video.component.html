@@ -1,0 +1,28 @@
+<ul *ngFor="let item of subs">
+  <li>
+    <img [src]="item.snippet.thumbnails.default.url">
+    <button (click)="setChannel(item.snippet.resourceId.channelId)" id="setButton" type="button" class="btn btn-primary">Set channel</button>
+  </li>
+</ul>
+
+<div>
+    <button (click)="nextVideo()" class="btn btn-primary" type="button">Next</button>
+    <iframe id="player" class="e2e-iframe-trusted-src" type="text/html" width="640" height="390"
+            [src]="this.videoId | trusturl"
+            frameborder="0">
+    </iframe>
+</div>
+
+
+<div [@testAnimation]="orientation">
+  <p>test</p>
+</div>
+
+
+<p class="controls">
+            &laquo;
+            <a (click)="showPrevFriend()">Previous Friend</a>
+            &mdash;
+            <a (click)="showNextFriend()">Next Friend</a>
+            &raquo;
+</p>
