@@ -1,4 +1,5 @@
-<nav class="navbar fixed-top navbar-light"></nav>
+<nav class="navbar fixed-top navbar-light">
+</nav>
 <body style="background-color: #7FB2F0">
 <div class="container">
 
@@ -31,6 +32,13 @@
   -->
   <app-video class="app-video">
   </app-video>
+
+  <app-fader [isVisible]="isVisible">
+    Fading
+  </app-fader>
+
+
+  <button (click)="isVisible = !isVisible">Toggle</button>
 
 
 

@@ -7,6 +7,7 @@
 
 <div>
     <button (click)="nextVideo()" class="btn btn-primary" type="button">Next</button>
+    <button (click)="previousVideo()" class="btn btn-primary" type="button">Previous</button>
     <iframe id="player" class="e2e-iframe-trusted-src" type="text/html" width="640" height="390"
             [src]="this.videoId | trusturl"
             frameborder="0">
@@ -14,15 +15,3 @@
 </div>
 
 
-<div [@testAnimation]="orientation">
-  <p>test</p>
-</div>
-
-
-<p class="controls">
-            &laquo;
-            <a (click)="showPrevFriend()">Previous Friend</a>
-            &mdash;
-            <a (click)="showNextFriend()">Next Friend</a>
-            &raquo;
-</p>
