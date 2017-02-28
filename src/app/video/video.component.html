@@ -1,3 +1,5 @@
+<div [@visibilityChanged2]="visibility2" >
+  <ng-content></ng-content>
 <ul *ngFor="let item of subs">
   <li>
     <img [src]="item.snippet.thumbnails.default.url">
@@ -6,12 +8,11 @@
 </ul>
 
 <div>
-    <button (click)="nextVideo()" class="btn btn-primary" type="button">Next</button>
     <button (click)="previousVideo()" class="btn btn-primary" type="button">Previous</button>
+    <button (click)="nextVideo()" class="btn btn-primary" type="button">Next</button>
     <iframe id="player" class="e2e-iframe-trusted-src" type="text/html" width="640" height="390"
             [src]="this.videoId | trusturl"
             frameborder="0">
     </iframe>
 </div>
-
-
+</div>

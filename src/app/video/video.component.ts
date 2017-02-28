@@ -1,12 +1,28 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, OnChanges, trigger, state, style, animate, transition, Input} from '@angular/core';
 import {YoutubeService} from "../services/youtube.service";
 
 @Component({
   selector: 'app-video',
   templateUrl: './video.component.html',
-  styleUrls: ['./video.component.scss']
+  styleUrls: ['./video.component.scss'],
+  animations: [
+    trigger('visibilityChanged2', [
+      state('void', style({opacity: 0,position:'fixed', width:'100%'}) ),
+      state('*', style({position:'fixed', width:'100%'}) ),
+      state('shown' , style({ opacity: 1, transform: 'translateX(0%)' })),
+      state('hidden', style({ opacity: 0, transform: 'translateX(100%)' })),
+      state('test', style({ opacity: 1, transform: 'translateX(50%)' })),
+      transition('* => *', animate('.5s'))
+    ])
+  ]
 })
 export class VideoComponent implements OnInit {
+  @Input() isVisible2 : boolean = true;
+  visibility2 = 'shown';
+  ngOnChanges() {
+    this.visibility2 = this.isVisible2 ? 'shown' : 'hidden';
+  }
+
   items: any = [];
   state: any;
   private videoId: any = [];
