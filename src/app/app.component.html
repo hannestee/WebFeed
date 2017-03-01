@@ -2,26 +2,26 @@
 </nav>
 <body style="background-color: #7FB2F0">
 <div class="container">
-
   <h1>WebFeed</h1>
-
+  <div>
+    <app-facebook></app-facebook>
+  </div>
+  <div class="nextbutton">
+    <button (click)="isVisible = !isVisible" (click)="isVisible2 =!isVisible2" type="button" class="btn btn-primary">Next</button>
+  </div>
   <div class="row" id="feed">
     <!--<div class="col-xs-6">
       <button ng-click="connectButton()" id="connectButton" type="button" class="btn btn-primary">Connect Twitter</button>
       <button ng-click="refreshTimeline()" id="getTimelineButton" type="button" class="btn btn-primary" style="display:none;">Feed me</button>
       <button ng-click="signOut()" id="signOut" type="button" class="btn btn-danger" style="display:none;">Sign Out</button>
     </div>-->
-
-    <app-fader [isVisible]="isVisible">
+    <app-fader class="app-fader "[isVisible]="!isVisible">
     <a data-width="900" data-height="600"
        class="twitter-timeline" href="https://twitter.com/steam_games">Tweets by steam_games
     </a>
     </app-fader>
-  </div>
-
-  <div [class.my-class]="visibility2">
-    <button (click)="isVisible = !isVisible" type="button" class="btn btn-primary" >Twitter</button>
-
+    <app-video class="app-video" [isVisible2]="isVisible2">
+    </app-video>
   </div>
   <!--<div ng-controller="VideosController"></div>
   <button ng-click="launch()" id="launch" type="button" class="btn btn-primary">Launch</button>
@@ -30,15 +30,6 @@
     </div>
   </div>
   -->
-  <button (click)="isVisible2 = !isVisible2" type="button" class="btn btn-danger" >Youtube</button>
-
-  <app-video class="app-video" [isVisible2]="isVisible2">
-
-  </app-video>
-
-
-
-
 </div>
 <footer class="navbar fixed-bottom navbar-light" id="footer">
   <a class="navbar-brand" href="#">Fixed bottom</a>

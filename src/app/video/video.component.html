@@ -1,18 +1,21 @@
 <div [@visibilityChanged2]="visibility2" >
   <ng-content></ng-content>
-<ul *ngFor="let item of subs">
-  <li>
-    <img [src]="item.snippet.thumbnails.default.url">
-    <button (click)="setChannel(item.snippet.resourceId.channelId)" id="setButton" type="button" class="btn btn-primary">Set channel</button>
-  </li>
-</ul>
-
-<div>
-    <button (click)="previousVideo()" class="btn btn-primary" type="button">Previous</button>
-    <button (click)="nextVideo()" class="btn btn-primary" type="button">Next</button>
+  <div class ="player">
+    <div class="buttons">
+      <button (click)="previousVideo()" class="btn btn-primary" type="button">Previous</button>
+      <button (click)="nextVideo()" class="btn btn-primary" type="button">Next</button>
+    </div>
     <iframe id="player" class="e2e-iframe-trusted-src" type="text/html" width="640" height="390"
             [src]="this.videoId | trusturl"
             frameborder="0">
     </iframe>
-</div>
+  </div>
+  <div class="subscribers">
+  <ul *ngFor="let item of subs">
+    <li>
+      <img [src]="item.snippet.thumbnails.default.url">
+      <button (click)="setChannel(item.snippet.resourceId.channelId)" id="setButton" type="button" class="btn btn-primary">Set channel</button>
+    </li>
+  </ul>
+  </div>
 </div>

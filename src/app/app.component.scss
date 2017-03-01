@@ -15,10 +15,6 @@ $sitebg: $blue;
   border-color: $navbarborder;
 }
 
-app-top-bar{
-  height: 5em;
-}
-
 .container{
   margin-left: 40em;
   width: 50%;
@@ -45,7 +41,12 @@ app-top-bar{
   border-color: $navbarborder;
 }
 
+.app-fader{
+  position: absolute;
+}
+
 .app-video{
-  margin: 12em;
+  margin: 1em;
+  position: absolute;
 }
 

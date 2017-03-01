@@ -7,11 +7,8 @@ import {YoutubeService} from "../services/youtube.service";
   styleUrls: ['./video.component.scss'],
   animations: [
     trigger('visibilityChanged2', [
-      state('void', style({opacity: 0,position:'fixed', width:'100%'}) ),
-      state('*', style({position:'fixed', width:'100%'}) ),
-      state('shown' , style({ opacity: 1, transform: 'translateX(0%)' })),
-      state('hidden', style({ opacity: 0, transform: 'translateX(100%)' })),
-      state('test', style({ opacity: 1, transform: 'translateX(50%)' })),
+      state('shown' , style({ opacity: 1, transform: 'translateY(0%)'})),
+      state('hidden', style({ opacity: 0, transform: 'translateY(100%)', display: 'none' })),
       transition('* => *', animate('.5s'))
     ])
   ]
@@ -36,7 +33,7 @@ export class VideoComponent implements OnInit {
 
     this.youtubeService.getActivities().subscribe(
       (response) => {
-        console.log(response);
+        //console.log(response);
         this.nextpage = response;
         //console.log(JSON.stringify(this.items.snippet));
         //console.log(this.pagetoken.nextPageToken);
@@ -82,7 +79,7 @@ export class VideoComponent implements OnInit {
   previousVideo(){
     this.youtubeService.pageToken = this.nextpage.prevPageToken;
     this.videoId = 'http://www.youtube.com/embed/' + this.youtubeService.pageToken;
-    console.log(this.youtubeService.pageToken);
+    //console.log(this.youtubeService.pageToken);
     this.state = 'prev';
     this.ngOnInit();
   }
