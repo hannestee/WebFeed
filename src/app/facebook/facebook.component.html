@@ -1,52 +1,5 @@
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '772182406280951',
-      xfbml      : true,
-      version    : 'v2.8'
-    });
-    FB.AppEvents.logPageView();
-  };
 
-  (function(d, s, id){
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {return;}
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
+<button (click)="setFb()" type="button" class="btn btn-primary">Set facebook page</button>
 
-  FB.getLoginStatus(function(response) {
-    if (response.status === 'connected') {
-      console.log('Logged in.');
-    }
-    else {
-      FB.login();
-    }
-  });
-
-
-  function myFacebookLogin() {
-    FB.login(function(){
-      FB.api(
-        "/{page-id}",
-        function (response) {
-          if (response && !response.error) {
-            /* handle the result */
-          }
-        }
-      );
-
-
-    }, {scope: 'publish_actions'});
-  }
-</script>
-
-<p>
-  facebook works!
-</p>
-
-
-
-
-<button onclick="myFacebookLogin()">Login with Facebook</button>
+<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Filtalehti.fi&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+        width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>

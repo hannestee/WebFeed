@@ -1,11 +1,42 @@
 <nav class="navbar fixed-top navbar-light">
-</nav>
-<body style="background-color: #7FB2F0">
-<div class="container">
   <h1>WebFeed</h1>
-  <div>
-    <app-facebook></app-facebook>
+</nav>
+<body style="background: -moz-linear-gradient(45deg, #35478C 0%, #ADD5F7 100%); /* ff3.6+ */ ">
+<div class="container">
+  <div class="row-2">
+    <div class="col-2">
+    </div>
   </div>
+
+  <div class="animtest">
+    <p class="controls">
+      &laquo;
+      <a (click)="showPrevFriend()">Previous Friend</a>
+      &mdash;
+      <a (click)="showNextFriend()">Next Friend</a>
+      &raquo;
+    </p>
+    <template ngFor let-friend [ngForOf]="[ selectedFriend ]">
+      <div [@friendAnimation]="orientation" class="friend">
+        <div class="name">
+          <div [innerHTML]="friend.html"></div>
+        </div>
+        <div class="avatar"></div>
+        <div class="meta">
+          <p>test</p>
+          &mdash;
+          <p>test</p>
+        </div>
+      </div>
+    </template>
+  </div>
+
+  <div class ="app-facebook">
+    <app-facebook class="fb"></app-facebook>
+  </div>
+
+   <div><app-sodexo></app-sodexo></div>
+
   <div class="nextbutton">
     <button (click)="isVisible = !isVisible" (click)="isVisible2 =!isVisible2" type="button" class="btn btn-primary">Next</button>
   </div>
@@ -16,12 +47,16 @@
       <button ng-click="signOut()" id="signOut" type="button" class="btn btn-danger" style="display:none;">Sign Out</button>
     </div>-->
     <app-fader class="app-fader "[isVisible]="!isVisible">
+
     <a data-width="900" data-height="600"
        class="twitter-timeline" href="https://twitter.com/steam_games">Tweets by steam_games
     </a>
+
     </app-fader>
+
     <app-video class="app-video" [isVisible2]="isVisible2">
     </app-video>
+
   </div>
   <!--<div ng-controller="VideosController"></div>
   <button ng-click="launch()" id="launch" type="button" class="btn btn-primary">Launch</button>

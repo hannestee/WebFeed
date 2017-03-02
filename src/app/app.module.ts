@@ -9,6 +9,8 @@ import {YoutubeService} from "./services/youtube.service";
 import { TrusturlPipe } from './pipes/trusturl.pipe';
 import { FaderComponent } from './fader/fader.component';
 import { FacebookComponent } from './facebook/facebook.component';
+import { SodexoComponent } from './sodexo/sodexo.component';
+import {SodexoService} from "./services/sodexo.service";
 
 @NgModule({
   declarations: [
@@ -16,14 +18,15 @@ import { FacebookComponent } from './facebook/facebook.component';
     VideoComponent,
     TrusturlPipe,
     FaderComponent,
-    FacebookComponent
+    FacebookComponent,
+    SodexoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [YoutubeService],
+  providers: [YoutubeService, SodexoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

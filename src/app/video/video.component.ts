@@ -20,8 +20,8 @@ export class VideoComponent implements OnInit {
     this.visibility2 = this.isVisible2 ? 'shown' : 'hidden';
   }
 
-  items: any = [];
-  state: any;
+  private items: any = [];
+  private state: any;
   private videoId: any = [];
   private subs: any = [];
   private nextpage: any = [];

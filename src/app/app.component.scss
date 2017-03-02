@@ -13,25 +13,30 @@ $sitebg: $blue;
 .navbar {
   background-color: $navbarbg;
   border-color: $navbarborder;
+  height: 5em;
+  h1{
+    font-family: sans-serif;
+  }
+}
+
+.row-2{
+  margin: 2em;
+}
+
+.app-facebook{
+  margin-top: 5em;
+}
+
+.animtest{
+  margin: auto;
+  margin-top: 5em;
 }
 
 .container{
-  margin-left: 40em;
+  margin: auto;
   width: 50%;
-  height: 120em;
+  height: 180em;
   background-color: $sitebg;
-  h1{
-    margin-top: 2em;
-  }
-  #feed{
-    margin-top: 5em;
-    .col-xs-6{
-      margin-bottom: 2em;
-      #signOut{
-        margin-left: 40em;
-      }
-    }
-  }
 }
 
 #footer {
