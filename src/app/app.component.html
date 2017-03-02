@@ -19,12 +19,11 @@
     <template ngFor let-friend [ngForOf]="[ selectedFriend ]">
       <div [@friendAnimation]="orientation" class="friend">
         <div class="name">
-          <div [innerHTML]="friend.html"></div>
+          <div [innerHTML]="friends.html | sanitizeHtml"></div>
         </div>
         <div class="avatar"></div>
-        <div class="meta">
-          <p>test</p>
-          &mdash;
+        <div class="meta">git
+          <p>{{friend.id}}</p>
           <p>test</p>
         </div>
       </div>

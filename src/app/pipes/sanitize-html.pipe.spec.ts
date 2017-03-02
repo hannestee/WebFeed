@@ -1,10 +1,11 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { TrusturlPipe } from './trusturl.pipe';
+import { SanitizeHtmlPipe } from './sanitize-html.pipe';
 
-describe('TrusturlPipe', () => {
+describe('SanitizeHtmlPipe', () => {
   it('create an instance', () => {
+
 
   });
 });
