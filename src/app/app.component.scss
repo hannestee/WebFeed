@@ -13,29 +13,40 @@ $sitebg: $blue;
 .navbar {
   background-color: $navbarbg;
   border-color: $navbarborder;
+  height: 5em;
+  h1{
+    font-family: sans-serif;
+  }
 }
 
-app-top-bar{
-  height: 5em;
+body {
+  background: -moz-linear-gradient(270deg, $lightblue 0%, $darkestblue 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $lightblue), color-stop(100%, $darkestblue)); /* safari4+,chrome */
+  background: -webkit-linear-gradient(270deg, $lightblue 0%, $darkestblue 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(270deg, $lightblue 0%, $darkestblue 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(270deg, $lightblue 0%, $darkestblue 100%); /* ie10+ */
+  background: linear-gradient(180deg, $lightblue 0%, $darkestblue 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#0000ff',GradientType=0 ); /* ie6-9 */
+}
+
+.row-2{
+  margin: 2em;
+}
+
+#feed{
+  margin-top: 10em;
+}
+
+.animtest{
+  margin: auto;
+  margin-top: 5em;
 }
 
 .container{
-  margin-left: 40em;
+  margin: auto;
   width: 50%;
-  height: 120em;
+  height: 180em;
   background-color: $sitebg;
-  h1{
-    margin-top: 2em;
-  }
-  #feed{
-    margin-top: 5em;
-    .col-xs-6{
-      margin-bottom: 2em;
-      #signOut{
-        margin-left: 40em;
-      }
-    }
-  }
 }
 
 #footer {
@@ -45,7 +56,27 @@ app-top-bar{
   border-color: $navbarborder;
 }
 
+.app-fader{
+  position: absolute;
+}
+
 .app-video{
-  margin: 12em;
+  margin: 1em;
+  position: absolute;
+}
+
+.carousel-item {
+  height: 50em;
+    .e2e-iframe-trusted-src{
+    margin: 0 auto;
+  }
+  .twitter{
+    margin: 0 auto;
+
+  }
+  .youtube{
+    margin: 0 auto;
+  }
+
 }
 

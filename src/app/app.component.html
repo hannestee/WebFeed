@@ -1,27 +1,92 @@
-<nav class="navbar fixed-top navbar-light"></nav>
-<body style="background-color: #7FB2F0">
+<nav class="navbar fixed-top navbar-light">
+  <h1>WebFeed</h1>
+</nav>
+<body>
 <div class="container">
+  <div class="row">
+    <div class="col">
+    </div>
+  </div>
+  <div id="feed" class="carousel slide" data-interval="false">
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item active">
+        <iframe class="e2e-iframe-trusted-src" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Filtalehti.fi&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+                width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+      </div>
+      <div class="carousel-item">
+        <iframe class="e2e-iframe-trusted-src" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Filtasanomat&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+                width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+      </div>
+      <div class="carousel-item">
+        <div class="twitter">
+        <a data-width="900" data-height="600"
+           class="twitter-timeline" href="https://twitter.com/steam_games">Tweets by steam_games
+        </a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <app-video class="youtube"></app-video>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#feed" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#feed" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 
-  <h1>InternetFeed</h1>
 
-  <div class="row" id="feed">
+<!--  <div class="animtest">
+    <p class="controls">
+      <button class="btn btn-primary" (click)="showPrevPage()">Previous Page</button>
+      <button class="btn btn-primary" (click)="showNextPage()">Next Page</button>
+    </p>
+    <template ngFor let-friend [ngForOf]="[ selectedPage ]">
+      <div [@friendAnimation]="orientation" class="friend">
+        <div class="name">
+          <div class="e2e-inner-html-bound" [innerHTML]="friend.html | sanitizeHtml"></div>
+        </div>
+        <div class="avatar"></div>
+        <div class="meta">
+          <p>{{friend.id}}</p>
+          <p>test</p>
+        </div>
+      </div>
+    </template>
+  </div>-->
+
+  <!--<div class ="app-facebook">
+    <app-facebook class="fb"></app-facebook>
+  </div>-->
+
+   <!--<div><app-sodexo></app-sodexo></div>-->
+
+  <!--<div class="nextbutton">
+    <button (click)="isVisible = !isVisible" (click)="isVisible2 =!isVisible2" type="button" class="btn btn-primary">Next</button>
+  </div>
+  <div class="row" id="feed">-->
+
     <!--<div class="col-xs-6">
       <button ng-click="connectButton()" id="connectButton" type="button" class="btn btn-primary">Connect Twitter</button>
       <button ng-click="refreshTimeline()" id="getTimelineButton" type="button" class="btn btn-primary" style="display:none;">Feed me</button>
       <button ng-click="signOut()" id="signOut" type="button" class="btn btn-danger" style="display:none;">Sign Out</button>
     </div>-->
-<!--
-      <div class="col-xs-6">
-          <input type="text" ng-model="searchTerm" class="form-control" id="searchBox" placeholder="Enter search term here" ng-show="connectedTwitter"/>
-      </div>
--->
 
+    <!--<app-fader class="app-fader "[isVisible]="!isVisible">
 
     <a data-width="900" data-height="600"
        class="twitter-timeline" href="https://twitter.com/steam_games">Tweets by steam_games
     </a>
-  </div>
 
+    </app-fader>-->
+
+    <!--<app-video class="app-video" [isVisible2]="isVisible2">
+    </app-video>-->
+
+  </div>
   <!--<div ng-controller="VideosController"></div>
   <button ng-click="launch()" id="launch" type="button" class="btn btn-primary">Launch</button>
   <div id="player">
@@ -29,13 +94,6 @@
     </div>
   </div>
   -->
-  <app-video class="app-video">
-  </app-video>
-
-
-
-
-</div>
 <footer class="navbar fixed-bottom navbar-light" id="footer">
   <a class="navbar-brand" href="#">Fixed bottom</a>
 </footer>
