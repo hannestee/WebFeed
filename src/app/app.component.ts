@@ -3,10 +3,9 @@ import {
   ChangeDetectorRef
 } from '@angular/core';
 
-interface Friend {
+interface Page {
   id: number;
   name: string;
-  favoriteMovie: string;
   html: string;
 }
 
@@ -88,52 +87,50 @@ type Orientation = ( "prev" | "next" | "none" );
 export class AppComponent {
   title = 'app works!';
   public orientation: Orientation;
-  public selectedFriend: Friend;
+  public selectedPage: Page;
 
   private changeDetectorRef: ChangeDetectorRef;
-  private friends: Friend[];
+  private pages: Page[];
 
   constructor(changeDetectorRef: ChangeDetectorRef) {
 
     this.changeDetectorRef = changeDetectorRef;
     this.orientation = "none";
 
-    this.friends = [
+    this.pages = [
       {
         id: 1,
-        name: "Sarah",
-        favoriteMovie: "Happy Gilmore",
+        name: "Iltalehti",
         html: `<iframe class="e2e-iframe-trusted-src" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Filtalehti.fi&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
         width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>`
       },
       {
         id: 2,
-        name: "Joanna",
-        favoriteMovie: "Happy Gilmore",
-        html: `<iframe class="e2e-iframe-trusted-src" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Filtalehti.fi&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+        name: "Ilta-sanomat",
+        html: `<iframe class="e2e-iframe-trusted-src" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Filtasanomat&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
         width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>`
       },
       {
         id: 3,
-        name: "Tricia",
-        favoriteMovie: "Working Girl",
-        html: `<iframe class="e2e-iframe-trusted-src" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Filtalehti.fi&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
-        width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>`
+        name: "Twitter",
+        html: `<a data-width="900" data-height="600"
+                class="twitter-timeline" class="e2e-trusted-url" [href]="https://twitter.com/steam_games | trusturl">Tweets by steam_games
+                </a>`
       },
       {
         id: 4,
-        name: "Kim",
-        favoriteMovie: "Terminator 2",
-        html: `<iframe class="e2e-iframe-trusted-src" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Filtalehti.fi&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
-        width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>`
+        name: "Youtube",
+        html: `<app-video></app-video>`
       }
+
+
     ];
 
-    this.selectedFriend = this.friends[0];
+    this.selectedPage = this.pages[0];
   }
 
 
-public showNextFriend() : void {
+public showNextPage() : void {
 
   // Change the "state" for our animation trigger.
   this.orientation = "next";
@@ -145,33 +142,33 @@ public showNextFriend() : void {
 this.changeDetectorRef.detectChanges();
 
 // Find the currently selected index.
-var index = this.friends.indexOf( this.selectedFriend );
+var index = this.pages.indexOf( this.selectedPage );
 
 // Move the rendered element to the next index - this will cause the current item
 // to enter the ( "next" => "void" ) transition and this new item to enter the
 // ( "void" => "next" ) transition.
-this.selectedFriend = this.friends[ index + 1 ]
-  ? this.friends[ index + 1 ]
-  : this.friends[ 0 ]
+this.selectedPage = this.pages[ index + 1 ]
+  ? this.pages[ index + 1 ]
+  : this.pages[ 0 ]
 ;
 
 }
 
 
 // I cycle to the previous friend in the collection.
-public showPrevFriend() : void {
+public showPrevPage() : void {
 
   // Change the "state" for our animation trigger.
   this.orientation = "prev";
 
 this.changeDetectorRef.detectChanges();
 
-var index = this.friends.indexOf( this.selectedFriend );
+var index = this.pages.indexOf( this.selectedPage );
 
 
-this.selectedFriend = this.friends[ index - 1 ]
-  ? this.friends[ index - 1 ]
-  : this.friends[ this.friends.length - 1 ]
+this.selectedPage = this.pages[ index - 1 ]
+  ? this.pages[ index - 1 ]
+  : this.pages[ this.pages.length - 1 ]
 ;
 
 }

@@ -12,7 +12,7 @@
   </div>
   <div class="subscribers">
   <ul *ngFor="let item of subs">
-    <li>
+    <li style="float: left;">
       <img [src]="item.snippet.thumbnails.default.url">
       <button (click)="setChannel(item.snippet.resourceId.channelId)" id="setButton" type="button" class="btn btn-primary">Set channel</button>
     </li>
