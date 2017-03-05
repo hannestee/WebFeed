@@ -14,8 +14,49 @@ $sitebg: $blue;
   background-color: $navbarbg;
   border-color: $navbarborder;
   height: 5em;
+  img{
+    float: left;
+  }
   h1{
-    font-family: sans-serif;
+    font-family: "Tahoma",sans-serif;
+    color: $lightblue;
+    float: right;
+    margin-left: 4em;
+    margin-top: -3em;
+  }
+  label{
+    float: left;
+    margin: auto;
+    margin-right: 1em;
+    font-size: 3em;
+    margin-top: -1.3em;
+    color: $lightblue;
+  }
+
+  #hacky-input {
+    display: none;
+  }
+
+  .crossRotate {
+    -webkit-transition-duration: 0.6s;
+    -moz-transition-duration: 0.6s;
+    -ms-transition-duration: 0.6s;
+    -o-transition-duration: 0.6s;
+    transition-duration: 0.6s;
+
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -ms-transition-property: -ms-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+  }
+
+  #hacky-input:checked + label div.crossRotate {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: translate(-7em, 0em);
   }
 }
 
@@ -80,3 +121,13 @@ body {
 
 }
 
+.carousel-control-prev{
+  margin-top: 15em;
+  height: 5em;
+  width: 5em;
+}
+.carousel-control-next{
+  margin-top: 15em;
+  height: 5em;
+  width: 5em;
+}

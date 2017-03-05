@@ -1,4 +1,5 @@
 import {Component, OnChanges,OnInit, trigger, state, transition, style, animate, Input} from '@angular/core';
+import {AppComponent} from "../app.component";
 
 @Component({
   selector: 'app-fader',
