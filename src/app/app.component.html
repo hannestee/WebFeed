@@ -1,18 +1,23 @@
+<div class="top-bar">
 <nav class="navbar fixed-top navbar-light">
   <img width="125" height="125" src="../assets/logo2.png">
   <h1>Web Feed</h1>
-  <input type="checkbox" id="hacky-input">
   <!--<label for="hacky-input">
   <a href="#" class="crossRotate">
   <i class="fa fa-cog" aria-hidden="true"></i></a>
   </label>-->
- <label for="hacky-input">
-    <div class="crossRotate">
-        <i (click)="toggleMenu()" class="fa fa-cog" aria-hidden="true"></i>
-    </div>
-  </label>
 
 </nav>
+<div class="settings">
+<input type="checkbox" id="hacky-input">
+<label for="hacky-input">
+  <div class="crossRotate">
+    <i (click)="toggleMenu()" class="fa fa-cog" aria-hidden="true"></i>
+  </div>
+</label>
+</div>
+</div>
+
 <body>
 <div class="container">
   <div class="row">
