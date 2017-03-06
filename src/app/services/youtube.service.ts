@@ -47,7 +47,7 @@ export class YoutubeService {
   public setData = (data) => {
     this.data = data;
     this.nameupdated.emit(this.data);
-    //console.log(this.data);
+    console.log(this.data);
   };
 
 

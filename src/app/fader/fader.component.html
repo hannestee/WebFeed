@@ -6,7 +6,7 @@
   <li><input [ngModel]="ytChannelName" (ngModelChange)="ytChannelName=$event" type="text" class="ytChannelName" placeholder="Enter youtube channel name"/>
     <p>{{ytChannelName}}</p>
   </li>
-  <li><button (click)="getChannelId()" class="btn btn-primary">Set Youtube channel name</button> </li>
+  <li><button (click)="setYtName()" class="btn btn-primary">Set Youtube channel name</button> </li>
 
   <li><input [ngModel]="rssFeedUrl" (ngModelChange)="RSS=$event" type="text" class="rssFeedUrl" placeholder="Enter rss feed url"/>
     <p>{{rssFeedUrl}}</p>

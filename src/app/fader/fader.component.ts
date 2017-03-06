@@ -46,24 +46,29 @@ export class FaderComponent implements OnInit {
     );
   };
 
-  /*public getChannelId(){
-    this.youtubeService.getChannelId(this.ytChannelName).subscribe(
+  setYtName = () => {
+    this.youtubeService.setData(this.ytChannelName);
+    this.getChannelId();
+  }
+
+  public getChannelId(){
+    this.youtubeService.nameupdated.subscribe(
       (response) => {
-        //console.log(response);
-        this.youtubeService.userId = JSON.stringify(response.items[0].id);
-        console.log(this.youtubeService.userId);
-        this.youtubeService.setData(this.youtubeService.channelId);
+        console.log(response);
+        //this.youtubeService.userId = JSON.stringify(response.items[0].id);
+        //console.log(this.youtubeService.userId);
+        //this.youtubeService.setData(this.youtubeService.channelId);
       },
       (error) => (error.json())
 
     );
-  }*/
+  }
 
 
 
   ngOnInit() {
     this.getRSS();
-    /*this.getChannelId();*/
+    this.getChannelId();
   }
 
 }
