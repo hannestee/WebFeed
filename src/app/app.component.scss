@@ -9,15 +9,65 @@ $navbarborder: $darkestblue;
 $navbarbg: $darkerblue;
 $sitebg: $blue;
 
-
-.navbar {
-  background-color: $navbarbg;
-  border-color: $navbarborder;
-  height: 5em;
-  h1{
-    font-family: sans-serif;
-  }
+.top-bar {
+  position: relative;
 }
+.navbar {
+    float: left;
+    background-color: $navbarbg;
+    border-color: $navbarborder;
+    height: 5em;
+    z-index: 9995;
+    img {
+      float: left;
+    }
+    h1 {
+      font-family: "Tahoma", sans-serif;
+      color: $lightblue;
+      float: right;
+      margin-left: 4em;
+      margin-top: -3em;
+    }
+}
+
+.settings {
+    position: fixed;
+    margin: auto;
+    float: right;
+    margin-left: 90%;
+    z-index: 9999;
+    label {
+      font-size: 3em;
+      color: $lightblue;
+    }
+    #hacky-input {
+      display: none;
+    }
+}
+
+
+  .crossRotate {
+    -webkit-transition-duration: 0.6s;
+    -moz-transition-duration: 0.6s;
+    -ms-transition-duration: 0.6s;
+    -o-transition-duration: 0.6s;
+    transition-duration: 0.6s;
+
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -ms-transition-property: -ms-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+  }
+
+  #hacky-input:checked + label div.crossRotate {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
 
 body {
   background: -moz-linear-gradient(270deg, $lightblue 0%, $darkestblue 100%); /* ff3.6+ */
@@ -45,7 +95,7 @@ body {
 .container{
   margin: auto;
   width: 50%;
-  height: 180em;
+  height: 78em;
   background-color: $sitebg;
 }
 
@@ -80,3 +130,13 @@ body {
 
 }
 
+.carousel-control-prev{
+  margin-top: 15em;
+  height: 5em;
+  width: 5em;
+}
+.carousel-control-next{
+  margin-top: 15em;
+  height: 5em;
+  width: 5em;
+}

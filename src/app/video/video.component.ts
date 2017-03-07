@@ -30,7 +30,24 @@ export class VideoComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getActivities();
+    this.getYoutubeSubs();
+  }
 
+  getYoutubeSubs(){
+    this.youtubeService.getYoutubeSubs().subscribe(
+      (response) => {
+        //console.log(response);
+        this.subs = response.items;
+        //console.log(this.subs );
+      },
+      (error) => (error.json())
+
+    );
+  }
+
+
+  getActivities(){
     this.youtubeService.getActivities().subscribe(
       (response) => {
         //console.log(response);
@@ -42,18 +59,8 @@ export class VideoComponent implements OnInit {
         this.checkType(this.items[0].snippet.type);
         //console.log(this.videoId)// ;
       },
-          (error) => (error.json())
-
-
-    );
-
-    this.youtubeService.getYoutubeSubs().subscribe(
-      (response) => {
-        //console.log(response);
-        this.subs = response.items;
-        //console.log(this.subs );
-      },
       (error) => (error.json())
+
 
     );
   }

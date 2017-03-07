@@ -1,3 +1,11 @@
-<p>
-  sodexo works!
-</p>
+<div class="rss">
+  <div ng-hide="myValue"></div>
+  <h1>
+    RSS
+  </h1>
+  <ul class="text">
+    <li *ngFor="let item of data.items">
+      <div [innerHTML]="item.content"></div>
+    </li>
+  </ul>
+</div>

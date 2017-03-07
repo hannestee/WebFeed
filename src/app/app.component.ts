@@ -16,6 +16,16 @@ type Orientation = ( "prev" | "next" | "none" );
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [
+      trigger('slideInOut', [
+          state('in', style({
+              transform: 'translate3d(0, 0, 0)'
+          })),
+          state('out', style({
+              transform: 'translate3d(100%, 0, 0)'
+          })),
+          transition('in => out', animate('400ms ease-in-out')),
+          transition('out => in', animate('400ms ease-in-out'))
+      ]),
     trigger(
       "friendAnimation",
       [
@@ -85,6 +95,12 @@ type Orientation = ( "prev" | "next" | "none" );
 })
 
 export class AppComponent {
+    menuState:string = 'out';
+    toggleMenu() {
+        // 1-line if statement that toggles the value:
+        this.menuState = this.menuState === 'out' ? 'in' : 'out';
+    }
+
   title = 'app works!';
   public orientation: Orientation;
   public selectedPage: Page;

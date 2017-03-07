@@ -1,0 +1,25 @@
+
+
+:host {
+  background: #4E7AC7;
+  color: #fff;
+  position: fixed;
+  left: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 20%;
+  min-width: 250px;
+  z-index: 9995;
+}
+
+ul {
+  font-size: 18px;
+  line-height: 3;
+  font-weight: 400;
+  margin-top: 5em;
+  list-style: none;
+  li{
+    margin: 2em;
+  }
+}

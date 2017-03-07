@@ -1,4 +1,16 @@
-<div [@visibilityChanged]="visibility" >
-  <ng-content></ng-content>
-</div>
 
+<!--fader component = settings component-->
+
+
+<ul>
+  <li><input [ngModel]="ytChannelName" (ngModelChange)="ytChannelName=$event" type="text" class="ytChannelName" placeholder="Enter youtube channel name"/>
+    <p>{{ytChannelName}}</p>
+  </li>
+  <li><button (click)="setYtName()" class="btn btn-primary">Set Youtube channel name</button> </li>
+
+  <li><input [ngModel]="rssFeedUrl" (ngModelChange)="RSS=$event" type="text" class="rssFeedUrl" placeholder="Enter rss feed url"/>
+    <p>{{rssFeedUrl}}</p>
+  </li>
+  <li><button (click)="setRSS()" class="btn btn-primary">Set RSS Url</button> </li>
+
+</ul>
