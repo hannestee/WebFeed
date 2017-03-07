@@ -13,17 +13,19 @@ import {YoutubeService} from "../services/youtube.service";
     ])
   ]
 })
-export class VideoComponent implements OnInit {
+export class VideoComponent implements OnInit{
   @Input() isVisible2 : boolean = true;
   visibility2 = 'shown';
+
   ngOnChanges() {
     this.visibility2 = this.isVisible2 ? 'shown' : 'hidden';
   }
 
+  private data: any = [];
   private items: any = [];
   private state: any;
   private videoId: any = [];
-  private subs: any = [];
+  subs: any = [];
   private nextpage: any = [];
 
   constructor(private youtubeService: YoutubeService) {
@@ -32,6 +34,15 @@ export class VideoComponent implements OnInit {
   ngOnInit() {
     this.getActivities();
     this.getYoutubeSubs();
+    this.data = this.youtubeService.nameupdated.subscribe(
+    data => {
+      //console.log(this.data);
+      this.data = this.youtubeService.data;
+      //console.log(this.youtubeService.userId);
+      this.setChannel(this.youtubeService.data);
+    }
+    )
+
   }
 
   getYoutubeSubs(){

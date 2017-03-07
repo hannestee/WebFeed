@@ -95,7 +95,7 @@ body {
 .container{
   margin: auto;
   width: 50%;
-  height: 78em;
+  height: 100em;
   background-color: $sitebg;
 }
 
@@ -116,18 +116,23 @@ body {
 }
 
 .carousel-item {
+  height: 75%;
+}
+
+.twitter{
+  margin: 0 auto;
+}
+
+app-facebook{
+  margin: 0 auto;
+}
+
+app-sodexo{
   height: 50em;
-    .e2e-iframe-trusted-src{
-    margin: 0 auto;
-  }
-  .twitter{
-    margin: 0 auto;
+}
 
-  }
-  .youtube{
-    margin: 0 auto;
-  }
-
+.youtube{
+  margin: 0 auto;
 }
 
 .carousel-control-prev{

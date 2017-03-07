@@ -13,12 +13,11 @@ export class YoutubeService {
   private url_subs: string = 'https://www.googleapis.com/youtube/v3/subscriptions';
   private url_channels: string = 'https://www.googleapis.com/youtube/v3/channels';
   private API_KEY: string = 'AIzaSyASRHawVhbWxXn4ha7Dg3phpLqTxknpyF8';
-  private data: any = [];
-  channelId: string = 'UCakgsb0w7QB0VHdnCc-OVEA'; //default
+  data: any = [];
+  channelId: string = 'UCLSynGlDXSwyj0theatb4UA'; //default
   pageToken: string = '';
   userId: string = 'UCQOn-y2tdd12TWwvhTn2AtA';
   public nameupdated: EventEmitter<any> = new EventEmitter();
-  userName: string = 'test';
 
   public getActivities(){
     let params: URLSearchParams = new URLSearchParams();
@@ -38,20 +37,29 @@ export class YoutubeService {
     params.set('key', this.API_KEY);
     params.set('part', 'snippet');
     params.set('channelId', this.userId);
+    params.set('maxResults', '50');
 
     return this.http.get(this.url_subs, {
       search: params
     }).map(response => response.json())
   };
 
-  public setData = (data) => {
-    this.data = data;
-    this.nameupdated.emit(this.data);
-    console.log(this.data);
+  public getYoutubeId(name){
+    let params: URLSearchParams = new URLSearchParams();
+    params.set('key', this.API_KEY);
+    params.set('part', 'id,snippet,contentDetails');
+    params.set('forUsername', name);
+
+    return this.http.get(this.url_channels, {
+      search: params
+    }).map(response => response.json())
   };
 
-
-
-
+  public setData = (data) => {
+    this.data = data;
+    console.log(this.data);
+    this.nameupdated.emit(this.data);
+    //console.log(this.data);
+  };
 
 }

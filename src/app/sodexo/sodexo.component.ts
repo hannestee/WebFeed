@@ -10,7 +10,7 @@ export class SodexoComponent implements OnInit {
 
 
   private data: any = [];
-  private div = document.createElement("div");
+  //private div = document.createElement("div");
   private html: any ='';
   constructor(private sodexoService: SodexoService) { }
 
@@ -20,7 +20,7 @@ export class SodexoComponent implements OnInit {
 
         this.data = this.sodexoService.data;
         //console.log("moro");
-        this.div.innerHTML = this.data;
+        //this.div.innerHTML = this.data;
         //this.parsehtml(this.data.items);
         //console.log(this.data.items[0].content);
       }
