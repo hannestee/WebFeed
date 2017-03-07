@@ -1,5 +1,15 @@
 
-<button (click)="setFb()" type="button" class="btn btn-primary">Iltalehti.fi</button>
+
+<ul class="text">
+  <li *ngFor="let item of pages">
+    <button (click)="setFb(item)" type="button" class="btn btn-primary">{{item}}</button>
+  </li>
+</ul>
+
+<button (click)="setFb('iltalehti.fi')" type="button" class="btn btn-primary">Iltalehti.fi</button>
+<button (click)="setFb('BBCNews')" type="button" class="btn btn-primary">BBC News</button>
+<button (click)="setFb('Facebook')" type="button" class="btn btn-primary">Facebook</button>
+
 
 <div>
 <iframe class="facebook" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ftaloussanomat&tabs=timeline&width=500&height=900&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"

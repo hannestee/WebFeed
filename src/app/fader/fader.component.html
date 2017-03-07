@@ -9,9 +9,14 @@
   <li><button (click)="setYtName()" class="btn btn-primary">Set Youtube channel name</button> </li>
 
   <li><input [ngModel]="rssFeedUrl" (ngModelChange)="RSS=$event" type="text" class="rssFeedUrl" placeholder="Enter rss feed url"/>
-    <p>{{rssFeedUrl}}</p>
+    <p>{{RSS}}</p>
   </li>
   <li><button (click)="setRSS()" class="btn btn-primary">Set RSS Url</button> </li>
+
+  <li><input [ngModel]="fbpage" (ngModelChange)="FB=$event" type="text" class="fbpage" placeholder="Enter fb page name"/>
+    <p>{{FB}}</p>
+  </li>
+  <li><button (click)="setFbPage()" class="btn btn-primary">Set Facebook Page</button> </li>
 
 
 </ul>

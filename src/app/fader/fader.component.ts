@@ -4,6 +4,7 @@ import {SodexoService} from "../services/sodexo.service";
 import {SodexoComponent} from "../sodexo/sodexo.component";
 import {YoutubeService} from "../services/youtube.service";
 import {VideoComponent} from "../video/video.component";
+import {RsstojsonService} from "../services/rsstojson.service";
 
 @Component({
   selector: 'app-fader',
@@ -28,8 +29,11 @@ export class FaderComponent implements OnInit {
   private data: any = [];
   private ytChannelName: string='';
   private RSS: string = '';
+  private FB: string = '';
 
-  constructor(private rssService: SodexoService, private youtubeService: YoutubeService) { }
+
+
+  constructor(private rssService: SodexoService, private youtubeService: YoutubeService, private facebookService: RsstojsonService) { }
 
   setRSS = () => {
     this.rssService.setUrl(this.RSS);
@@ -84,9 +88,16 @@ export class FaderComponent implements OnInit {
 
     );
   }*/
+
+  setFbPage = () => {
+  this.facebookService.setPage(this.FB);
+  };
+
+
   ngOnInit() {
     this.getRSS();
     this.getYoutubeId(localStorage.getItem("ytchannelname"));
+    this.FB = localStorage.getItem("fbpage");
   }
 
 }

@@ -1,12 +1,23 @@
-import { Injectable } from '@angular/core';
+//rrstojson service = facebook service
+
+
+import {Injectable, EventEmitter} from '@angular/core';
 import {Headers, RequestOptions} from "@angular/http";
 
 @Injectable()
 export class RsstojsonService {
 
-  private rssToJSON: string = 'http://www.iltalehti.fi/rss/rss.xml';
+
+  data: string = '';
+
+  public pageupdated: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
+  public setPage = (data) => {
+    this.data = data;
+    this.pageupdated.emit(this.data);
+    //console.log(this.data);
+  };
 
 }
