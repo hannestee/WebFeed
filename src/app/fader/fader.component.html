@@ -1,20 +1,17 @@
 
 <!--fader component = settings component-->
-
+<h2>Settings</h2>
 
 <ul>
   <li><input [ngModel]="ytChannelName" (ngModelChange)="ytChannelName=$event" type="text" class="ytChannelName" placeholder="Enter youtube channel name"/>
-    <p>{{ytChannelName}}</p>
   </li>
   <li><button (click)="setYtName()" class="btn btn-primary">Set Youtube channel name</button> </li>
 
   <li><input [ngModel]="rssFeedUrl" (ngModelChange)="RSS=$event" type="text" class="rssFeedUrl" placeholder="Enter rss feed url"/>
-    <p>{{RSS}}</p>
   </li>
   <li><button (click)="setRSS()" class="btn btn-primary">Set RSS Url</button> </li>
 
   <li><input [ngModel]="fbpage" (ngModelChange)="FB=$event" type="text" class="fbpage" placeholder="Enter fb page name"/>
-    <p>{{FB}}</p>
   </li>
   <li><button (click)="setFbPage()" class="btn btn-primary">Set Facebook Page</button> </li>
 

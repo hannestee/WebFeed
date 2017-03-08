@@ -9,7 +9,7 @@ import {RsstojsonService} from "../services/rsstojson.service";
 export class FacebookComponent implements OnInit {
 
   private page;
-  private data: any;
+  private data: any = [];
 
   private pages: any = [];
 
@@ -17,19 +17,19 @@ export class FacebookComponent implements OnInit {
   constructor(private facebookService: RsstojsonService) { }
 
   ngOnInit() {
-    this.pages.localStorage.getItem("pages");
-    this.pages.push('Ted');
-
-    this.facebookService.pageupdated.subscribe(
-      data => {
-
-        this.pages.push(this.facebookService.data);
-        this.page = this.facebookService.data;
-        this.setFb(this.page);
-        console.log(this.pages);
-
-      }
-    )
+    //this.pages.localStorage.getItem("pages");
+    // this.pages.push('Ted');
+    //
+    // this.facebookService.pageupdated.subscribe(
+    //   data => {
+    //
+    //     this.pages.push(this.facebookService.data);
+    //     this.page = this.facebookService.data;
+    //     this.setFb(this.page);
+    //     console.log(this.pages);
+    //
+    //   }
+    // )
   }
 
   setFb(page){

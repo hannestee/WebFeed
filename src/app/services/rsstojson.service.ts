@@ -8,7 +8,7 @@ import {Headers, RequestOptions} from "@angular/http";
 export class RsstojsonService {
 
 
-  data: string = '';
+  public data: any = [];
 
   public pageupdated: EventEmitter<any> = new EventEmitter();
 
@@ -16,7 +16,7 @@ export class RsstojsonService {
 
   public setPage = (data) => {
     this.data = data;
-    this.pageupdated.emit(this.data);
+    //this.pageupdated.emit(this.data);
     //console.log(this.data);
   };
 

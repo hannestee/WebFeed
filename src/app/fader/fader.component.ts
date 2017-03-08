@@ -89,15 +89,15 @@ export class FaderComponent implements OnInit {
     );
   }*/
 
-  setFbPage = () => {
-  this.facebookService.setPage(this.FB);
-  };
+  // setFbPage = () => {
+  // this.facebookService.setPage(this.FB);
+  // };
 
 
   ngOnInit() {
     this.getRSS();
-    this.getYoutubeId(localStorage.getItem("ytchannelname"));
-    this.FB = localStorage.getItem("fbpage");
+    //this.getYoutubeId(localStorage.getItem("ytchannelname"));
+    //this.FB = localStorage.getItem("fbpage");
   }
 
 }
