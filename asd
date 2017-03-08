@@ -8,6 +8,17 @@ Features:
 - View the latest videos from your favourite youtube channels.
 - Set up any RSS feed by providing a link for it in the settings menu.
 
+This web application is for desktop users and is also compatible for mobile devices. 
+
+Apis that were used:
+
+YouTube Data Api v3: https://developers.google.com/youtube/v3/
+RSS to JSON Converter Api: https://rss2json.com/
 
 
-Made by Hannes
+
+Further developement could consist of adding OAuth system for social media authentication 
+and to get more personalized feed from the apis. 
+
+
+Made by Hannes.
