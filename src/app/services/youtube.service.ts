@@ -14,9 +14,9 @@ export class YoutubeService {
   private url_channels: string = 'https://www.googleapis.com/youtube/v3/channels';
   private API_KEY: string = 'AIzaSyASRHawVhbWxXn4ha7Dg3phpLqTxknpyF8';
   data: any = [];
-  channelId: string = 'UCLSynGlDXSwyj0theatb4UA'; //default
+  channelId: string = 'UC9mG6ja6NiQ71BamUtBlhyw'; //default
   pageToken: string = '';
-  userId: string = 'UCQOn-y2tdd12TWwvhTn2AtA';
+  userId: string = 'UC9mG6ja6NiQ71BamUtBlhyw';
   public nameupdated: EventEmitter<any> = new EventEmitter();
 
   public getActivities(){

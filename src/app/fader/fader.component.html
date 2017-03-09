@@ -13,7 +13,11 @@
 
   <li><input [ngModel]="fbpage" (ngModelChange)="FB=$event" type="text" class="fbpage" placeholder="Enter fb page name"/>
   </li>
-  <li><button (click)="setFbPage()" class="btn btn-primary">Set Facebook Page</button> </li>
+  <li><button class="set"(click)="setFbPage()" class="btn btn-primary">Set Facebook Page</button> <button class="clear" (click)="clearFbPages()" class="btn btn-danger">Clear</button></li>
+
+  <li><input [ngModel]="twitterpage" (ngModelChange)="TWITTER=$event" type="text" class="twitterpage" placeholder="Enter twitter a twitter feed"/>
+  </li>
+  <li><button class="set"(click)="setTwitterPage()" class="btn btn-primary">Set Twitter Feed</button><button class="clear" (click)="clearTwitterPages()" class="btn btn-danger">Clear</button> </li>
 
 
 </ul>
