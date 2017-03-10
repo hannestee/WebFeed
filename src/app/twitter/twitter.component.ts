@@ -10,7 +10,6 @@ import {WindowReference} from '../window-reference';
 export class TwitterComponent implements OnInit, AfterViewInit{
   @ViewChild('myContainer') container: ElementRef;
 
-
   private data;
   private page;
   private pages: any = [];
@@ -22,7 +21,7 @@ export class TwitterComponent implements OnInit, AfterViewInit{
   ngOnInit() {
     this.pagesStorage = JSON.parse(localStorage.getItem("pages2"));
     if (this.pagesStorage != null) {
-      console.log(this.pagesStorage[0]);
+      //console.log(this.pagesStorage[0]);
       this.setTwitter(this.pagesStorage[0]);
       //console.log(this.pagesStorage.length);
       for (let i = 0; i < this.pagesStorage.length; i++) {
@@ -30,7 +29,9 @@ export class TwitterComponent implements OnInit, AfterViewInit{
         //console.log(this.pages);
         //console.log(this.pagesStorage);
       }
-    }
+      } else {
+       this.setTwitter('Twitter');
+      }
 
     this.twitterService.pageupdated.subscribe(
       data => {
@@ -57,6 +58,8 @@ export class TwitterComponent implements OnInit, AfterViewInit{
     console.log(this.container.nativeElement);
     console.log(this.win.twttr);
     this.win.twttr.widgets.load();*/
+
+    this.win.twttr.ready(
     this.win.twttr.widgets.createTimeline(
       {
         sourceType: 'profile',
@@ -69,7 +72,8 @@ export class TwitterComponent implements OnInit, AfterViewInit{
         related: 'twitterdev,twitterapi'
       }).then(function (el) {
       console.log('Embedded a timeline.')
-    });
+    })
+    );
   }
 
   ngAfterViewInit(){

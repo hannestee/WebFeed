@@ -1,8 +1,7 @@
 <div class="rss">
-  <div ng-hide="myValue"></div>
-  <h1>
-    RSS
-  </h1> <img class="rssicon" src="../../feed-icon-28x28.png">
+  <div class="heading">
+    <img class="rssicon" src="../../feed-icon-28x28.png">
+  </div>
   <ul class="text">
     <li *ngFor="let item of data.items">
       <div [innerHTML]="item.content"></div>

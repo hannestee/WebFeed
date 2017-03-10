@@ -3,6 +3,12 @@ h2{
   color: #35478C;
 }
 
+p {
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+}
+
 :host {
   background: #4E7AC7;
   color: #fff;
@@ -32,6 +38,7 @@ input{
 }
 
 button{
+  margin:0;
   display: inline-block;
 }
 

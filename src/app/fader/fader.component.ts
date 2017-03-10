@@ -111,7 +111,7 @@ export class FaderComponent implements OnInit {
 
   ngOnInit() {
     this.getRSS();
-    //this.getYoutubeId(localStorage.getItem("ytchannelname"));
+    this.getYoutubeId(localStorage.getItem("ytchannelname"));
     //this.FB = localStorage.getItem("fbpage");
   }
 
