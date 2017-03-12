@@ -1,6 +1,6 @@
 <div class="top-bar">
 <nav class="navbar fixed-top navbar-light">
-  <img width="125" height="125" src="../assets/logo2.png">
+  <img width="125" height="125" src="../assets/logo3.png">
   <h1>Web Feed</h1>
   <!--<label for="hacky-input">
   <a href="#" class="crossRotate">
@@ -27,24 +27,21 @@
   <div id="feed" class="carousel slide" data-interval="false">
     <div class="carousel-inner" role="listbox">
       <div class="carousel-item active">
-        <iframe class="e2e-iframe-trusted-src" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Filtalehti.fi&tabs=timeline&width=500&height=900&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
-                width="500" height="900" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+        <h2>Facebook</h2>
+        <app-facebook></app-facebook>
+        <!--<iframe class="e2e-iframe-trusted-src" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Filtalehti.fi&tabs=timeline&width=500&height=900&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+                width="500" height="900" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>-->
       </div>
       <div class="carousel-item">
-        <iframe class="e2e-iframe-trusted-src" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Filtasanomat&tabs=timeline&width=500&height=900&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
-                width="500" height="900" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+        <h2>Twitter</h2>
+        <app-twitter></app-twitter>
       </div>
       <div class="carousel-item">
-        <div class="twitter">
-        <a data-width="600" data-height="600"
-           class="twitter-timeline" href="https://twitter.com/steam_games">Tweets by steam_games
-        </a>
-        </div>
-      </div>
-      <div class="carousel-item">
+        <h2>YouTube</h2>
         <app-video class="youtube"></app-video>
       </div>
       <div class="carousel-item">
+        <h2>RSS</h2>
         <app-sodexo></app-sodexo>
       </div>
     </div>
@@ -98,7 +95,7 @@
     <a data-width="900" data-height="600"
        class="twitter-timeline" href="https://twitter.com/steam_games">Tweets by steam_games
     </a>
-
+    <div></div>
     </app-fader>-->
 
     <!--<app-video class="app-video" [isVisible2]="isVisible2">

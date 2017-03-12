@@ -12,6 +12,9 @@ import { FacebookComponent } from './facebook/facebook.component';
 import { SodexoComponent } from './sodexo/sodexo.component';
 import {SodexoService} from "./services/sodexo.service";
 import { SanitizeHtmlPipe } from './pipes/sanitize-html.pipe';
+import {RsstojsonService} from "./services/rsstojson.service";
+import {TwitterService} from "./services/twitter.service";
+import { TwitterComponent } from './twitter/twitter.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +24,15 @@ import { SanitizeHtmlPipe } from './pipes/sanitize-html.pipe';
     FaderComponent,
     FacebookComponent,
     SodexoComponent,
-    SanitizeHtmlPipe
+    SanitizeHtmlPipe,
+    TwitterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [YoutubeService, SodexoService, SanitizeHtmlPipe],
+  providers: [YoutubeService, SodexoService, SanitizeHtmlPipe, RsstojsonService, TwitterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,11 +6,17 @@
   justify-content: center;
   width: 75%;
   height: 90%;
+  border:1px solid #35478C;
+}
+.rssicon{
+  display: inline-block;
+}
+
+.heading{
 }
 
 .text{
   overflow-y: auto;
-  border:1px solid #35478C;
   margin: auto;
   padding: 5em;
   justify-content: center;
